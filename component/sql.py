@@ -21,7 +21,4 @@ def DynamicSql(sql: str, data: dict, Don: list):
                     sql += "AND "
 
     sql += ';'
-
-    print(sql)
-
     return sql, tuple(params)

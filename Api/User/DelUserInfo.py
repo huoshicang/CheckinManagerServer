@@ -6,14 +6,12 @@ def DelUserInfo(Data: dict) -> dict:
     delid = Data['id']
     username = Data['username']
 
-    role = Administrator(params=tuple((delid,)))
+    name = Administrator(params=tuple((delid,)))
 
-    if role is None:
+    if name is None:
         return NOT_FOUND()
 
-    print(role)
-
-    if role['username'] == username:
+    if name['username'] == username:
         try:
             DelReq = Del(params=tuple((delid,)))
 

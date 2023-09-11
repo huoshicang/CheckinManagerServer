@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 
-from Api import AddCheckInfo, GetUserInfo, UpInfo, DelUserInfo
+from Api import AddCheckInfo, GetUserInfo, UpInfo, DelUserInfo, Modify
+from Api.User.ResetPassword import ResetPassword
 from component import BAD_REQUEST
 
 # 创建一个蓝图对象
@@ -85,3 +86,46 @@ def DelInfo():
         return BAD_REQUEST()
 
     return DelUserInfo(Data=data)
+
+
+@UserRouter.route(rule='/user/modify', methods=['POST'])
+def ModifyInfo():
+    """
+    删除系统用户
+    """
+    if request.get_data() == b'':
+        return BAD_REQUEST()
+
+    data = None
+
+    if 'application/json' in request.content_type:
+        data = request.json
+    elif 'multipart/form-data' in request.content_type:
+        data = request.form
+
+    if data == {} or not data["id"] or not data["phone"] or not data["username"]:
+        return BAD_REQUEST()
+
+    return Modify(Data=data)
+
+
+@UserRouter.route(rule='/user/reset', methods=['POST'])
+def ResetPassrowd():
+    """
+    重置密码
+    """
+    if request.get_data() == b'':
+        return BAD_REQUEST()
+
+    data = None
+
+    if 'application/json' in request.content_type:
+        data = request.json
+    elif 'multipart/form-data' in request.content_type:
+        data = request.form
+
+
+    if data == {} or not data["id"] or not data["username"]:
+        return BAD_REQUEST()
+
+    return ResetPassword(Data=data)

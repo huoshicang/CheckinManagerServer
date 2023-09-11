@@ -21,7 +21,8 @@ def GetUserInfo(Data: dict) -> dict:
             username,
             phone,
             gxy_info,
-            role
+            role,
+            update_time
             FROM sys_user WHERE is_deleted = false""", data=Data, Don=['name'])
 
             Query = QueryDataFetchAll(sql=sql, params=params)
@@ -55,7 +56,8 @@ def LookUpOne(params):
         username,
         phone,
         role,
-        gxy_info
+        gxy_info,
+        update_time
         FROM sys_user
         WHERE username = %s;""",
         params=params)
