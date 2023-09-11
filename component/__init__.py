@@ -3,3 +3,4 @@ from component.status_codes import (HTTP_STATUS_CODES,
                                     BAD_REQUEST,
                                     BAD_REQUEST2,
                                     INTERNAL_SERVER_ERROR)
+from component.sql import DynamicSql

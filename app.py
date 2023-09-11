@@ -7,12 +7,16 @@ from flask_cors import CORS
 
 
 from Router.User import UserRouter
+from Router.Check import UserCheck
 from Router.UserLog import UserLogRouter
+from Router.Weekly import WeeklyRouter
 from component import HTTP_STATUS_CODES, BAD_REQUEST
 
 app = Flask(__name__)
 app.register_blueprint(UserRouter)
+app.register_blueprint(UserCheck)
 app.register_blueprint(UserLogRouter)
+app.register_blueprint(WeeklyRouter)
 app.template_folder = 'templates'
 CORS(app, resources={"*": {"origins": "*"}})
 
