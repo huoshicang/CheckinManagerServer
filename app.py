@@ -1,9 +1,10 @@
-import jwt
-from flask import Flask, render_template, request, abort
+from flask import Flask, render_template
 from flask_cors import CORS
 
+from Router.UserLog import UserLogRouter
 
 app = Flask(__name__)
+app.register_blueprint(UserLogRouter)
 app.template_folder = 'templates'
 CORS(app, resources={"*": {"origins": "*"}})
 
