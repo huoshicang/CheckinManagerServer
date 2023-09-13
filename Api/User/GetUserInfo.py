@@ -57,7 +57,7 @@ def LookUpOne(params):
         phone,
         role,
         gxy_info,
-        update_time
+        DATE_FORMAT(update_time, '%Y-%m-%d %H:%i:%s') AS update_time
         FROM sys_user
         WHERE username = %s;""",
         params=params)

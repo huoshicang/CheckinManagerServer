@@ -9,7 +9,6 @@ def Modify(Data: dict):
 
     name = Administrator(params=tuple((id,)))
 
-
     if name is None:
         return NOT_FOUND()
 
@@ -33,12 +32,6 @@ def Modify(Data: dict):
         return BAD_REQUEST2()
 
 
-
-
-
-
-
-
 def Administrator(params):
     """
     获取角色
@@ -55,5 +48,3 @@ def Set(params):
                 username = %s,
                 phone = %s
                 WHERE id = %s;""", params=params)
-
-

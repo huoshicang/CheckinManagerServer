@@ -6,13 +6,13 @@ def ResetPassword(Data: dict):
     id = Data['id']
     username = Data['username']
 
-    password = Administrator(params=tuple((id,username, )))
+    password = Administrator(params=tuple((id, username,)))
 
     if password is None:
         return NOT_FOUND()
 
     try:
-        SetMsg = Set(params=tuple((id,username, )))
+        SetMsg = Set(params=tuple((id, username,)))
 
         if SetMsg == "操作成功":
             return {
@@ -31,15 +31,12 @@ def ResetPassword(Data: dict):
         return BAD_REQUEST2()
 
 
-
-
 def Administrator(params):
     """
     获取角色
     """
     return QueryDataFetchOne(
         sql="""SELECT password FROM sys_user WHERE id = %s AND username = %s;""", params=params)
-
 
 
 def Set(params):
@@ -49,7 +46,3 @@ def Set(params):
     return Update(Sql="""UPDATE sys_user SET
                 password = '123456'
                 WHERE id = %s AND username = %s;""", params=params)
-
-
-
-

@@ -4,11 +4,12 @@ from Api.UserLog.UserLogUp import LogUp
 from Api.UserLog.UserLogOut import LogOut
 
 # 系统用户信息
-from Api.User.GetUserInfo import GetUserInfo
-from Api.User.UpUserInfo import UpInfo
-from Api.User.DelUserInfo import DelUserInfo
-from Api.User.ModifyUserInfo import Modify
-from Api.User.ResetPassword import ResetPassword
+from Api.User.GetUserInfo import GetUserInfo # 获取用户
+from Api.User.UpUserInfo import UpInfo # 更新签到信息标识
+from Api.User.DelUserInfo import DelUserInfo # 删除用户
+from Api.User.ModifyUserInfo import Modify # 编辑用户
+from Api.User.ResetPassword import ResetPassword # 重置密码
+from Api.User.ChangePassword import ChangePassword # 修改密码
 
 # 签到用户信息
 from Api.CheckIn.GetCheckInfo import GetCheckInfo
