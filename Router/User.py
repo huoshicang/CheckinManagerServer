@@ -65,7 +65,7 @@ def UserInfo():
     return GetUserInfo(Data=data)
 
 
-@UserRouter.route(rule='/user/del', methods=['POST'])
+@UserRouter.route(rule='/user/delSys', methods=['POST'])
 def DelInfo():
     """
     删除系统用户

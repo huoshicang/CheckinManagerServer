@@ -4,7 +4,10 @@ from component.sql import DynamicSql
 
 
 def GetUserInfo(Data: dict) -> dict:
+    print(Data)
     name = Data['name']
+    username = Data['username']
+    gxy_info = Data['gxy_info']
 
     role = Administrator(UserName=tuple((name,)))['role']
 
@@ -16,16 +19,30 @@ def GetUserInfo(Data: dict) -> dict:
 
         if role == "admin":
             # 构建sql语句
-            sql, params = DynamicSql(sql="""SELECT
-            id,
+            # sql, params = DynamicSql(sql="""SELECT
+            # id,
+            # username,
+            # phone,
+            # gxy_info,
+            # role,
+            # update_time
+            # FROM sys_user WHERE is_deleted = false""", data=Data, Don=['name'])
+
+            Query = QueryDataFetchAll(sql="""SELECT id,
             username,
             phone,
             gxy_info,
             role,
             update_time
-            FROM sys_user WHERE is_deleted = false""", data=Data, Don=['name'])
+            FROM sys_user
+            WHERE
+            is_deleted = false AND 
+                (username = '' OR username = %s OR %s = '')
+                AND
+                (gxy_info = '' OR gxy_info = %s OR %s = '');""", params=tuple((username, username, gxy_info, gxy_info,)))
 
-            Query = QueryDataFetchAll(sql=sql, params=params)
+
+            print(Query)
 
         elif role == "user":
             Query = LookUpOne(params=tuple((name,)))

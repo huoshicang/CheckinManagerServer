@@ -23,7 +23,7 @@ def GetWeekly():
     elif 'multipart/form-data' in request.content_type:
         data = request.form
 
-    if data == {} or not data["username"]:
+    if data == {}:
         return BAD_REQUEST()
 
     return WeeklyData(Data=data)

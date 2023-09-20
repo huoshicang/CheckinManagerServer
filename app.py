@@ -51,8 +51,8 @@ def before_request():
 
         try:
             # 使用密钥解析JWT令牌
-            jwt.decode(Authorization, "Miss", algorithms=['HS256'])
-            pass
+            token = jwt.decode(Authorization, "Miss", algorithms=['HS256'])
+            print(token)
         except jwt.ExpiredSignatureError:
             return {
                 "code": HTTP_STATUS_CODES['UNAUTHORIZED'],  # 使用 HTTP 404 表示未找到

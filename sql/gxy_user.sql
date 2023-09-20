@@ -34,7 +34,7 @@
 create table if not exists `gxy_user`
 (
 `id` int not null auto_increment comment 'id' primary key,
-`enable` varchar(5) default 'true' not null comment '启停',
+`enable` tinyint default 0 not null comment '启停',
 `name` varchar(10) not null comment '姓名',
 `phone` varchar(11) not null comment '手机号',
 `password` varchar(15) not null comment '密码',
@@ -51,7 +51,10 @@ create table if not exists `gxy_user`
 `note` varchar(255) null comment '打卡备注',
 `type` char(20) default 'android' not null comment '签到设备',
 `pushKey` varchar(50) not null comment '推送token',
-`save_time` datetime null comment '签到时间'
+`save_time` datetime null comment '签到时间',
+`is_deleted` tinyint default 1 not null comment '是否删除',
+`create_time` datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+`update_time` datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间'
 ) comment '`gxy_user`';
 
 insert into `gxy_user` (`name`, `phone`, `password`, `province`, `city`, `area`, `address`, `longitude`, `latitude`, `note`, `pushKey`, `save_time`) values ('魏正豪', '15750480195', '123', '内蒙古', '辉县市', '计算机科学与技术', 'www.jean-dietrich.org', '83699.65', '58587.9', '184.254.24.150', 'RN', '2022-12-21 15:01:06');

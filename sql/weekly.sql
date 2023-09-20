@@ -5,7 +5,12 @@ create table if not exists `weeklydata`
 `username` varchar(5) not null comment '用户名',
 `title` longtext not null comment '周报标题',
 `content` longtext not null comment '周报内容',
-`weekly_time` datetime not null comment '周报提交时间'
+`weekly_time` datetime not null comment '周报提交时间',
+`sub` tinyint(1) default 0 not null comment '是否已交',
+`is_deleted` tinyint(1) default 0 not null comment '是否删除',
+`enable` tinyint(1) default 0 not null comment '是否启用',
+`create_time` datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+`update_time` datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间'
 ) comment '周报信息';
 
 

@@ -5,7 +5,7 @@ import pymysql.cursors
 def GetConn():
     return pymysql.connect(
         host='47.115.206.215',
-        user="root",
+        user="fondlike",
         password="177155",
         database="gxy",
         port=3306,

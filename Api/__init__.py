@@ -14,6 +14,8 @@ from Api.User.ChangePassword import ChangePassword # 修改密码
 # 签到用户信息
 from Api.CheckIn.GetCheckInfo import GetCheckInfo
 from Api.CheckIn.AddCheckInfo import AddCheckInfo
+from Api.CheckIn.ModifyCheck import Modify
+from Api.CheckIn.DelCheckInfo import DelCheck
 
 # 周报
 from Api.Weekly.GetWeeklyData import WeeklyData

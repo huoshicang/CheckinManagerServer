@@ -7,13 +7,14 @@ create table if not exists `sys_user`
 `password` varchar(12) not null comment '密码',
 `token` longtext null comment 'token',
 `role` varchar(5) default 'user' not null comment '角色',
-`gxy_info` varchar(5) default 'fasle' not null comment '用户名',
+`gxy_info` tinyint default 0 not null comment '签到信息',
 `is_deleted` tinyint default 0 not null comment '是否删除',
+`create_time` datetime default CURRENT_TIMESTAMP not null comment '创建时间',
 `update_time` datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间'
 ) comment '`sys_user`';
 
 
-insert into `sys_user` (`username`, `phone`, `password`) values ('卢擎苍', '15751122669', 'UJzHC');
+insert into `sys_user` (`username`, `phone`, `password`) values ('管理员', '15751122669', '123');
 insert into `sys_user` (`username`, `phone`, `password`) values ('胡梓晨', '15847531353', 'lxIr');
 insert into `sys_user` (`username`, `phone`, `password`) values ('范俊驰', '17242316426', 'uD');
 insert into `sys_user` (`username`, `phone`, `password`) values ('廖彬', '17820176778', 'LXYvj');

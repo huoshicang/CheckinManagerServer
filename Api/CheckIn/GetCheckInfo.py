@@ -6,8 +6,7 @@ def GetCheckInfo(UserName: str) -> dict:
     """
     获取签到用户
     """
-
-    role = Administrator(UserName=tuple((UserName,)))['role']
+    role = Administrator(UserName=tuple((UserName,)))
 
     if role is None:
         return NOT_FOUND()
@@ -15,9 +14,9 @@ def GetCheckInfo(UserName: str) -> dict:
     try:
         Query = None
 
-        if role == "admin":
+        if role['role'] == "admin":
             Query = LookUpAll()
-        elif role == "user":
+        elif role['role'] == "user":
             Query = LookUpOne(params=tuple((UserName,)))
         else:
             INTERNAL_SERVER_ERROR()
@@ -57,7 +56,7 @@ def LookUpOne(params):
         pushKey,
         save_time
         FROM gxy_user
-        WHERE name = %s;""",
+        WHERE name = %s AND is_deleted = false;""",
         params=params)
 
 
@@ -82,7 +81,8 @@ def LookUpAll():
         type,
         pushKey,
         save_time
-        FROM gxy_user""")
+        FROM gxy_user
+        WHERE is_deleted = false;""")
 
 
 def Administrator(UserName):

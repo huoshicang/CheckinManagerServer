@@ -30,20 +30,19 @@ def LookUpAll(username, starttime, endtime):
     """
     获取用户周报信息 查表
     """
-    sql = """SELECT
+    return QueryDataFetchAll(sql="""SELECT
+            weekly_id,
+            username,
             title, # 标题
+            content, # 内容
             weekly_time , # 提交时间
-            content # 内容
+            sub, # 是否已交
+            enable # 是否开启
             FROM weeklydata
-            WHERE username = %s"""
-
-    params = [username]
-
-    if starttime:
-        sql += " AND weekly_time >= %s"
-        params.append(starttime)
-    if endtime:
-        sql += " AND weekly_time <= %s"
-        params.append(endtime)
-
-    return QueryDataFetchAll(sql=sql, params=tuple(params))
+            WHERE 
+            (username = '' OR username >= %s OR %s = '')
+             AND 
+            (weekly_time = '' OR weekly_time >= %s OR %s = '')
+             AND
+            (weekly_time = '' OR weekly_time <= %s OR %s = '');""",
+                             params=tuple((username, username, starttime, starttime, endtime, endtime)))
