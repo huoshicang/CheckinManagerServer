@@ -8,30 +8,61 @@ create table if not exists `weeklydata`
 `weekly_time` datetime not null comment '周报提交时间',
 `sub` tinyint(1) default 0 not null comment '是否已交',
 `is_deleted` tinyint(1) default 0 not null comment '是否删除',
-`enable` tinyint(1) default 0 not null comment '是否启用',
+`enable` varchar(5) default 'true' not null comment '是否启用',
 `create_time` datetime default CURRENT_TIMESTAMP not null comment '创建时间',
 `update_time` datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间'
 ) comment '周报信息';
 
 
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (1, '黄昊天', '首当其冲', '蔡徐坤', '2022-02-05 06:15:42');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (2, '方博涛', '先发制人', '练习', '2022-04-24 22:50:27');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (3, '金苑博', '意想不到', '鸡', '2022-01-12 17:50:14');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (4, '赵烨霖', '奋发有为', '太', '2022-12-24 00:37:36');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (5, '蔡峻熙', '无可厚非', '唱', '2022-11-22 06:46:27');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (6, '黄弘文', '任重道远', '美', '2022-05-24 23:45:00');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (7, '魏修洁', '继往开来', '篮球', '2022-05-08 12:26:32');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (8, '陆弘文', '触目惊心', '你', '2022-04-20 05:56:36');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (9, '吴旭尧', '见义勇为', '个人练习生', '2022-07-08 03:57:49');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (10, '林嘉懿', '可乘之机', '练习', '2022-06-27 16:50:23');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (11, '史弘文', '排忧解难', 'rap', '2022-01-07 07:14:11');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (12, '罗立轩', '四面八方', '两年半', '2022-10-01 22:15:38');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (13, '萧弘文', '深入人心', '时长', '2022-09-11 07:38:39');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (14, '吴凯瑞', '一举一动', '你', '2022-04-15 13:41:39');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (15, '史鑫鹏', '未雨绸缪', '唱', '2022-04-19 02:12:03');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (16, '韩智渊', '脱颖而出', 'rap', '2022-06-10 08:59:18');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (17, '曹煜城', '名列前茅', '两年半', '2022-03-16 05:15:07');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (18, '李智渊', '引人注目', 'music', '2022-10-31 08:13:26');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (19, '韩思聪', '可见一斑', 'music', '2022-05-18 03:47:25');
-insert into `weeklydata` (`weekly_id`, `username`, `title`, `content`, `weekly_time`) values (20, '陈正豪', '可见一斑', '你', '2022-06-25 05:53:41');
+insert into `weeklydata` (`username`, `title`, `content`, `weekly_time`) values
+('胡梓晨', '周报标题1', '周报内容1', '2023-09-20 09:30:00'),
+('范俊驰', '周报标题2', '周报内容2', '2023-09-21 14:45:00'),
+('廖彬', '周报标题3', '周报内容3', '2023-09-22 11:20:00'),
+('彭鸿煊', '周报标题4', '周报内容4', '2023-09-23 16:55:00'),
+('史耀杰', '周报标题5', '周报内容5', '2023-09-24 08:10:00'),
+('邱博文', '周报标题6', '周报内容6', '2023-09-25 10:05:00'),
+('韦立果', '周报标题7', '周报内容7', '2023-09-26 12:40:00'),
+('尹烨霖', '周报标题8', '周报内容8', '2023-09-27 17:15:00'),
+('余荣轩', '周报标题9', '周报内容9', '2023-09-28 09:50:00'),
+('程君浩', '周报标题10', '周报内容10', '2023-09-29 13:25:00'),
+('郭绍齐', '周报标题11', '周报内容11', '2023-09-30 15:00:00'),
+('贾越泽', '周报标题12', '周报内容12', '2023-10-01 07:35:00'),
+('韦越彬', '周报标题13', '周报内容13', '2023-10-02 10:20:00'),
+('叶楷瑞', '周报标题14', '周报内容14', '2023-10-03 11:45:00'),
+('覃弘文', '周报标题15', '周报内容15', '2023-10-04 14:30:00'),
+('沈明杰', '周报标题16', '周报内容16', '2023-10-05 16:05:00'),
+('黄哲瀚', '周报标题17', '周报内容17', '2023-10-06 08:40:00'),
+('秦振家', '周报标题18', '周报内容18', '2023-10-07 11:15:00'),
+('杨语堂', '周报标题19', '周报内容19', '2023-10-08 12:50:00');
+
+
+-- 为每个用户插入随机数量的周报，最少1篇，最多5篇
+insert into `weeklydata` (`username`, `title`, `content`, `weekly_time`)
+select
+  `username`,
+  CONCAT('周报标题', FLOOR(RAND() * 5) + 1), -- 随机生成1到5之间的整数作为标题后缀
+  CONCAT('周报内容', FLOOR(RAND() * 5) + 1), -- 随机生成1到5之间的整数作为内容后缀
+  DATE_ADD('2022-02-05 06:15:42', INTERVAL FLOOR(RAND() * 30) DAY) -- 随机生成从2022-02-05开始的30天内的日期
+from (
+  select '黄昊天' as `username` union
+  select '胡梓晨' union
+  select '范俊驰' union
+  select '廖彬' union
+  select '彭鸿煊' union
+  select '史耀杰' union
+  select '邱博文' union
+  select '韦立果' union
+  select '尹烨霖' union
+  select '余荣轩' union
+  select '程君浩' union
+  select '郭绍齐' union
+  select '贾越泽' union
+  select '韦越彬' union
+  select '叶楷瑞' union
+  select '覃弘文' union
+  select '沈明杰' union
+  select '黄哲瀚' union
+  select '秦振家' union
+  select '杨语堂'
+) AS Users;
 
