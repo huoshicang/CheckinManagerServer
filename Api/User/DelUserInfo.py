@@ -10,8 +10,6 @@ def DelUserInfo(Data: dict) -> dict:
 
     gxy_id_username = AdministratorGxy(params=tuple((username,)))
 
-    print(gxy_id_username)
-
     if sys_id_username is None:
         return NOT_FOUND()
 
