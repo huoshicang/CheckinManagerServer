@@ -2,11 +2,17 @@ from component import QueryDataFetchOne, HTTP_STATUS_CODES, QueryDataFetchAll, I
 from component.status_codes import NOT_FOUND
 
 
-def GetCheckInfo(UserName: str) -> dict:
+def GetCheckInfo(Data: dict) -> dict:
     """
     获取签到用户
     """
-    role = Administrator(UserName=tuple((UserName,)))
+
+    name = Data['name']
+    phone = Data['phone']
+    enable = Data['enable']
+    role = Data['role']
+
+    role = Administrator(UserName=tuple((role,)))
 
     if role is None:
         return NOT_FOUND()
@@ -15,11 +21,11 @@ def GetCheckInfo(UserName: str) -> dict:
         Query = None
 
         if role['role'] == "admin":
-            Query = LookUpAll()
+            Query = LookUpAll(name, phone, enable)
         elif role['role'] == "user":
-            Query = LookUpOne(params=tuple((UserName,)))
+            Query = LookUpOne(params=tuple((username,)))
         else:
-            INTERNAL_SERVER_ERROR()
+            return INTERNAL_SERVER_ERROR()
 
         if Query is None:
             return NOT_FOUND()
@@ -60,7 +66,7 @@ def LookUpOne(params):
         params=params)
 
 
-def LookUpAll():
+def LookUpAll(name, phone, enable):
     """
     :return: 获取所有用户的信息
     """
@@ -82,7 +88,15 @@ def LookUpAll():
         pushKey,
         save_time
         FROM gxy_user
-        WHERE is_deleted = false;""")
+        WHERE is_deleted = false
+        AND 
+        (name = '' OR name = %s OR %s = '')
+         AND 
+        (phone = '' OR phone = %s OR %s = '')
+         AND
+        (enable = '' OR enable = %s OR %s = '');""", params=tuple((name, name,
+                                                                    phone, phone,
+                                                                    enable, enable,)))
 
 
 def Administrator(UserName):

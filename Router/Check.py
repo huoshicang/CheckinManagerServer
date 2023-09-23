@@ -7,17 +7,27 @@ from component import BAD_REQUEST
 UserCheck = Blueprint('UserCheck', __name__)
 
 
-@UserCheck.route(rule='/user/CheckInfo', methods=['GET'])
+@UserCheck.route(rule='/user/CheckInfo', methods=['POST'])
 def GetCheck():
     """
     获取用户签到信息
     """
-    UserName = request.args.get('username')
-
-    if UserName is not None:
-        return GetCheckInfo(UserName=UserName)
-    else:
+    if request.get_data() == b'':
         return BAD_REQUEST()
+
+    data = None
+
+    if 'application/json' in request.content_type:
+        data = request.json
+    elif 'multipart/form-data' in request.content_type:
+        data = request.form
+
+    if data == {} or not data["role"]:
+        return BAD_REQUEST()
+
+    print(data)
+
+    return GetCheckInfo(Data=data)
 
 
 @UserCheck.route(rule='/user/ModifyInfo', methods=['POST'])
