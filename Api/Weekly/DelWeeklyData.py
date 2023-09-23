@@ -19,13 +19,13 @@ def DelWeekly(Data: dict) -> dict:
             return {
                 "code": HTTP_STATUS_CODES['OK'],
                 "data": [],
-                "message": "修改成功"
+                "message": "删除成功"
             }
         else:
             return {
                 "code": HTTP_STATUS_CODES['INTERNAL_SERVER_ERROR'],
                 "data": [],
-                "message": f"修改失败：{DelReq}"
+                "message": f"删除失败：{DelReq}"
             }
     except:
         return INTERNAL_SERVER_ERROR()
