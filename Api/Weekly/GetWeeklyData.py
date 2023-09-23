@@ -2,7 +2,7 @@ from component import QueryDataFetchAll, HTTP_STATUS_CODES, INTERNAL_SERVER_ERRO
 from component.status_codes import NOT_FOUND
 
 
-def WeeklyData(Data: dict) -> dict:
+def GetWeekly(Data: dict) -> dict:
     """
     获取用户周报信息
     """
@@ -35,14 +35,16 @@ def LookUpAll(username, starttime, endtime):
             username,
             title, # 标题
             content, # 内容
-            weekly_time , # 提交时间
-            sub, # 是否已交
+            weekly_time,
+            sub,
             enable # 是否开启
             FROM weeklydata
             WHERE 
-            (username = '' OR username >= %s OR %s = '')
+                is_deleted = false
+            AND
+                (username = '' OR username = %s OR %s = '')
              AND 
-            (weekly_time = '' OR weekly_time >= %s OR %s = '')
+                (weekly_time = '' OR weekly_time >= %s OR %s = '')
              AND
-            (weekly_time = '' OR weekly_time <= %s OR %s = '');""",
+                (weekly_time = '' OR weekly_time <= %s OR %s = '');""",
                              params=tuple((username, username, starttime, starttime, endtime, endtime)))

@@ -18,4 +18,5 @@ from Api.CheckIn.ModifyCheck import Modify
 from Api.CheckIn.DelCheckInfo import DelCheck
 
 # 周报
-from Api.Weekly.GetWeeklyData import WeeklyData
+from Api.Weekly.GetWeeklyData import GetWeekly
+from Api.Weekly.DelWeeklyData import DelWeekly
