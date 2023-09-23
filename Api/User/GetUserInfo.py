@@ -1,12 +1,11 @@
 from component import QueryDataFetchOne, HTTP_STATUS_CODES, QueryDataFetchAll, INTERNAL_SERVER_ERROR
 from component.status_codes import NOT_FOUND
-from component.sql import DynamicSql
 
 
 def GetUserInfo(Data: dict) -> dict:
-    print(Data)
     name = Data['name']
     username = Data['username']
+    phone = Data['phone']
     gxy_info = Data['gxy_info']
 
     role = Administrator(UserName=tuple((name,)))['role']
@@ -18,16 +17,6 @@ def GetUserInfo(Data: dict) -> dict:
         Query = None
 
         if role == "admin":
-            # 构建sql语句
-            # sql, params = DynamicSql(sql="""SELECT
-            # id,
-            # username,
-            # phone,
-            # gxy_info,
-            # role,
-            # update_time
-            # FROM sys_user WHERE is_deleted = false""", data=Data, Don=['name'])
-
             Query = QueryDataFetchAll(sql="""SELECT id,
             username,
             phone,
@@ -36,13 +25,16 @@ def GetUserInfo(Data: dict) -> dict:
             update_time
             FROM sys_user
             WHERE
-            is_deleted = false AND 
-                (username = '' OR username = %s OR %s = '')
-                AND
-                (gxy_info = '' OR gxy_info = %s OR %s = '');""", params=tuple((username, username, gxy_info, gxy_info,)))
-
-
-            print(Query)
+            is_deleted = false
+            AND 
+            (username = '' OR username = %s OR %s = '')
+            AND 
+            (phone = '' OR phone = %s OR %s = '')
+            AND
+            (gxy_info = '' OR gxy_info = %s OR %s = '');""",
+                                      params=tuple((username, username,
+                                                    phone, phone,
+                                                    gxy_info, gxy_info,)))
 
         elif role == "user":
             Query = LookUpOne(params=tuple((name,)))

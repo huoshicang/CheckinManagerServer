@@ -1,6 +1,15 @@
 from flask import Blueprint, request
 
-from Api import AddCheckInfo, GetUserInfo, UpInfo, DelUserInfo, Modify, ResetPassword, ChangePassword
+from Api.CheckIn.AddCheckInfo import AddCheckInfo
+
+from Api.User.ChangePassword import ChangePassword
+from Api.User.GetUserInfo import GetUserInfo
+from Api.User.ModifyUserInfo import Modify
+from Api.User.DelUserInfo import DelUserInfo
+from Api.User.ResetPassword import ResetPassword
+from Api.User.UpUserInfo import UpInfo
+
+
 from component import BAD_REQUEST
 
 # 创建一个蓝图对象
