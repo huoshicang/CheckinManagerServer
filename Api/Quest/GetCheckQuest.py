@@ -2,17 +2,15 @@ from component import QueryDataFetchOne, HTTP_STATUS_CODES, QueryDataFetchAll, I
 from component.status_codes import NOT_FOUND
 
 
-def GetCheckInfo(Data: dict) -> dict:
+def GetCheckQuest(Data: dict) -> dict:
     """
     获取签到用户
     """
-
     name = Data['name']
-    phone = Data['phone']
-    enable = Data['enable']
-    role = Data['role']
+    username = Data['username']
+    # role = Data['role']
 
-    role = Administrator(UserName=tuple((role,)))
+    role = Administrator(UserName=tuple((name,)))
 
     if role is None:
         return NOT_FOUND()
@@ -21,18 +19,14 @@ def GetCheckInfo(Data: dict) -> dict:
         Query = None
 
         if role['role'] == "admin":
-            Query = LookUpAll(name, phone, enable)
+            Query = LookUpAll(username)
         elif role['role'] == "user":
-            Query = LookUpOne(params=tuple((username,)))
+            Query = LookUpOne(params=tuple((name,)))
         else:
             return INTERNAL_SERVER_ERROR()
 
         if Query is None:
             return NOT_FOUND()
-
-        for item in Query:
-            item["check_time"] = str(item['check_time'])
-            item["save_time"] = str(item['save_time'])
 
         return {
             "code": HTTP_STATUS_CODES['OK'],
@@ -53,56 +47,26 @@ def LookUpOne(params):
         id,
         enable,
         name,
-        phone,
-        country,
-        province,
-        city,
-        area,
-        address,
-        longitude,
-        latitude,
-        note,
-        type,
-        pushKey,
-        save_time,
         check_time
         FROM gxy_user
         WHERE name = %s AND is_deleted = false;""",
         params=params)
 
 
-def LookUpAll(name, phone, enable):
+def LookUpAll(username):
     """
-    :return: 获取所有用户的信息
+    获取所有用户的信息
     """
     return QueryDataFetchAll(
         sql="""SELECT
         id,
         enable,
         name,
-        phone,
-        country,
-        province,
-        city,
-        area,
-        address,
-        longitude,
-        latitude,
-        note,
-        type,
-        pushKey,
-        save_time,
-        check_time
+        date(check_time) AS check_time
         FROM gxy_user
         WHERE is_deleted = false
         AND 
-        (name = '' OR name = %s OR %s = '')
-         AND 
-        (phone = '' OR phone = %s OR %s = '')
-         AND
-        (enable = '' OR enable = %s OR %s = '');""", params=tuple((name, name,
-                                                                    phone, phone,
-                                                                    enable, enable,)))
+        (name = '' OR name = %s OR %s = '');""", params=tuple((username,username,)))
 
 
 def Administrator(UserName):

@@ -2,11 +2,11 @@ from component import QueryDataFetchOne, Update
 from component.status_codes import NOT_FOUND, BAD_REQUEST2, INTERNAL_SERVER_ERROR, HTTP_STATUS_CODES
 
 
-def DelWeekly(Data: dict) -> dict:
+def DelMonth(Data: dict) -> dict:
     """
-    删除周报
+    删除月报
     """
-    delid = Data['weekly_id']
+    delid = Data['month_id']
     username = Data['username']
     Deltitle = Data['title']
 
@@ -36,12 +36,12 @@ def DelWeekly(Data: dict) -> dict:
 
 def AdministratorSys(params):
     """
-    周报信息
+    月报信息
     """
     return QueryDataFetchOne(
-        sql="""SELECT title FROM weeklydata
+        sql="""SELECT title FROM monthdata
         WHERE
-            weekly_id = %s
+            month_id = %s
         AND
             username = %s
         AND
@@ -50,12 +50,12 @@ def AdministratorSys(params):
 
 def Del(params):
     """
-    删除周报
+    删除月报
     """
-    return Update(Sql="""UPDATE weeklydata
+    return Update(Sql="""UPDATE monthdata
                 SET is_deleted = true
                 WHERE 
-                    weekly_id = %s
+                    month_id = %s
                 AND
                     username = %s
                 AND

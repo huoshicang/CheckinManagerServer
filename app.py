@@ -1,21 +1,26 @@
 import datetime
+import json
 import logging
 
 import jwt
-from flask import Flask, render_template, request, abort
+from flask import Flask, request
 from flask_cors import CORS
 
+from Router.Month import MonthRouter
 from Router.User import UserRouter
 from Router.Check import UserCheck
 from Router.UserLog import UserLogRouter
 from Router.Weekly import WeeklyRouter
-from component import HTTP_STATUS_CODES
+from Router.Quest import Quest
+from component import HTTP_STATUS_CODES, BAD_REQUEST
 
 app = Flask(__name__)
 app.register_blueprint(UserRouter)
 app.register_blueprint(UserCheck)
 app.register_blueprint(UserLogRouter)
 app.register_blueprint(WeeklyRouter)
+app.register_blueprint(MonthRouter)
+app.register_blueprint(Quest)
 app.template_folder = 'templates'
 
 CORS(app, resources={"*": {"origins": "*"}})
@@ -30,37 +35,68 @@ def Test():
     }
 
 
+@app.route(rule='/log', methods=['POST'])
+def Log():
+    Lis = []
+    # if request.get_data() == b'':
+    #     return BAD_REQUEST()
+    #
+    # data = None
+    #
+    # if 'application/json' in request.content_type:
+    #     data = request.json
+    # elif 'multipart/form-data' in request.content_type:
+    #     data = request.form
+    file_path = f"{datetime.date.today()}.log"  # 替换成你的日志文件路径
+    lines_to_read = 100
+
+    # 使用deque来存储最新的100行
+    from collections import deque
+
+    recent_lines = deque(maxlen=lines_to_read)
+
+    # 打开文件并逐行读取
+    with open(file_path, 'r') as file:
+        for line in file:
+            recent_lines.append(line.strip())
+
+    # recent_lines现在包含了文件的最新100行
+    for line in recent_lines:
+        Lis.append(line)
+
+    return {
+        'data': Lis
+    }
+
+
 # 处理请求前
 @app.before_request
 def before_request():
-    if ('/user/Login' in request.url or
-            '/user/Logup' in request.url or
-            '/test' in request.url or
-            '/user/AddInfo' in request.url or
-            '/user/UpLog' in request.url or
-            '/html' in request.url):
+    # logging.info("===" * 30)
+    # logging.info(request.environ.get('REQUEST_METHOD'), request.environ.get('PATH_INFO'), request.environ.get('SERVER_PROTOCOL'))
+    # logging.info(request.environ.get('REMOTE_ADDR'))
+
+    if ('/user/Login' is request.path or
+            '/user/Logup' is request.path or
+            'user/change' is request.path or
+            '/test' is request.path or
+            '/user/AddInfo' is request.path or
+            '/user/UpLog' is request.path):
         pass
 
     else:
-
-        # print(request.environ.get('wsgi.url_scheme'))
-        # print(request.method)
-        # print(request.path)
-
-        # print(request.headers)
-        # print(request.url)
-        # if 'application/json' in request.content_type:
-        #     data = request.json
-        #     print(data)
-        # elif 'multipart/form-data' in request.content_type:
-        #     data = request.form
-        #     print(data)
 
         Authorization = request.headers.get('Authorization')
 
         try:
             # 使用密钥解析JWT令牌
             token = jwt.decode(Authorization, "Miss", algorithms=['HS256'])
+            # 获取token
+            # logging.info(request.environ.get('HTTP_AUTHORIZATION'))
+            # 时间戳转时间
+            # token['exp'] = datetime.datetime.fromtimestamp(token['exp']).strftime("%Y-%m-%d %H:%M:%S")
+            # logging.info(token)
+
         except jwt.ExpiredSignatureError:
             return {
                 "code": HTTP_STATUS_CODES['UNAUTHORIZED'],  # 使用 HTTP 404 表示未找到
@@ -91,7 +127,42 @@ if __name__ == '__main__':
     # )
     # log = logging.getLogger(__name__)
 
-    print("运行在7860端口")
+    msg = r"""
+                          _ooOoo_
+                         o8888888o
+                         88" . "88
+                         (| -_- |)
+                          O\ = /O
+                      ____/`---'\____
+                    .   ' \\| |// `.
+                     / \\||| : |||// \
+                   / _||||| -:- |||||- \
+                     | | \\\ - /// | |
+                   | \_| ''\---/'' | |
+                    \ .-\__ `-` ___/-. /
+                 ___`. .' /--.--\ `. . __
+              ."" '< `.___\_<|>_/___.' >'"".
+             | | : `- \`.;`\ _ /`;.`/ - ` : | |
+               \ \ `-. \_ __\ /__ _/ .-` / /
+       ======`-.____`-.___\_____/___.-`____.-'======
+                          `=---='
+
+       .............................................
+              佛祖保佑             永无BUG
+       .............................................
+           佛曰:
+           写字楼里写字间          写字间里程序员；
+           程序人员写程序          又拿程序换酒钱。
+           酒醒只在网上坐          酒醉还来网下眠；
+           酒醉酒醒日复日          网上网下年复年。
+           但愿老死电脑间          不愿鞠躬老板前；
+           奔驰宝马贵者趣          公交自行程序员。
+           别人笑我忒疯癫          我笑自己命太贱；
+           不见满街漂亮妹          哪个归得程序员？
+    """
+
+    # print(msg)
+    # print("运行在7860")
     app.run(host='0.0.0.0', port=7860, debug=True)
 
 """

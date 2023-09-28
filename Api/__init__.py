@@ -20,5 +20,17 @@ from Api.CheckIn.DelCheckInfo import DelCheck
 # 周报
 from Api.Weekly.GetWeeklyData import GetWeekly
 from Api.Weekly.DelWeeklyData import DelWeekly
-from Api.Weekly.AddweeklyData import AddWeekly
+from Api.Weekly.AddWeeklyData import AddWeekly
 from Api.Weekly.ModifyWeeklyData import ModifyWeekly
+
+# 月报
+from Api.Month.GetMonthData import GetMonth
+from Api.Month.DelMonthData import DelMonth
+from Api.Month.AddMonthData import AddMonth
+from Api.Month.ModifyMonthData import ModifyMonth
+
+# 任务
+from Api.Quest.GetCheckQuest import GetCheckQuest
+# from Api.Quest.DelWeeklyData import DelWeekly
+# from Api.Quest.AddWeeklyData import AddWeekly
+# from Api.Quest.ModifyWeeklyData import ModifyWeekly

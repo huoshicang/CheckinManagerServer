@@ -1,6 +1,8 @@
 from component import QueryDataFetchOne, HTTP_STATUS_CODES, QueryDataFetchAll, INTERNAL_SERVER_ERROR
 from component.status_codes import NOT_FOUND
 
+from component.Time import Da
+
 
 def GetUserInfo(Data: dict) -> dict:
     name = Data['name']
@@ -36,6 +38,7 @@ def GetUserInfo(Data: dict) -> dict:
                                                     phone, phone,
                                                     gxy_info, gxy_info,)))
 
+
         elif role == "user":
             Query = LookUpOne(params=tuple((name,)))
 
@@ -44,6 +47,9 @@ def GetUserInfo(Data: dict) -> dict:
 
         if Query is None:
             return NOT_FOUND()
+
+        for item in Query:
+            item["update_time"] = str(item['update_time'])
 
         return {
             "code": HTTP_STATUS_CODES['OK'],
@@ -66,7 +72,7 @@ def LookUpOne(params):
         phone,
         role,
         gxy_info,
-        DATE_FORMAT(update_time, '%Y-%m-%d %H:%i:%s') AS update_time
+        update_time
         FROM sys_user
         WHERE username = %s;""",
         params=params)

@@ -60,7 +60,6 @@ def UserInfo():
     """
     获取系统用户
     """
-
     if request.get_data() == b'':
         return BAD_REQUEST()
 
@@ -71,6 +70,9 @@ def UserInfo():
     elif 'multipart/form-data' in request.content_type:
         data = request.form
 
+    if data == {} or not data["name"]:
+        return BAD_REQUEST()
+
     return GetUserInfo(Data=data)
 
 
@@ -79,7 +81,6 @@ def DelInfo():
     """
     删除系统用户
     """
-
     if request.get_data() == b'':
         return BAD_REQUEST()
 

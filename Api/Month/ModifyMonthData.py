@@ -2,16 +2,16 @@ from component import QueryDataFetchOne, HTTP_STATUS_CODES, INTERNAL_SERVER_ERRO
 from component.mysql import Indate
 
 
-def ModifyWeekly(Data: dict) -> dict:
+def ModifyMonth(Data: dict) -> dict:
     """
-    添加修改周报
+    添加月报
     """
-    weekly_id = Data['weekly_id']
+    weekly_id = Data['month_id']
     title = Data['title']
     content = Data['content']
     username = Data['username']
     enable = Data['enable']
-    weekly_time = Data['weekly_time']
+    weekly_time = Data['month_time']
 
     QueryOne = LookUpOne(params=tuple((weekly_id,)))
 
@@ -52,24 +52,24 @@ def ModifyWeekly(Data: dict) -> dict:
 
 def LookUpOne(params):
     """
-    获取周报信息
+    获取月报信息
     """
     return QueryDataFetchOne(
         sql="""SELECT
         title
-        FROM weeklydata
-        WHERE weekly_id = %s;""",
+        FROM monthdata
+        WHERE month_id = %s;""",
         params=params)
 
 
 def Add(params):
     """
-    添加周报数据
+    添加月报数据
     """
-    return Update(Sql="""UPDATE weeklydata SET
+    return Update(Sql="""UPDATE monthdata SET
                 title = %s,
                 content = %s,
                 username = %s,
                 enable = %s,
-                weekly_time = %s
-                WHERE weekly_id = %s;""", params=params)
+                month_time = %s
+                WHERE month_id = %s;""", params=params)

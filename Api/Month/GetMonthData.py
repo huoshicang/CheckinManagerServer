@@ -2,9 +2,9 @@ from component import QueryDataFetchAll, HTTP_STATUS_CODES, INTERNAL_SERVER_ERRO
 from component.status_codes import NOT_FOUND
 
 
-def GetWeekly(Data: dict) -> dict:
+def GetMonth(Data: dict) -> dict:
     """
-    获取用户周报信息
+    获取用户月报信息
     """
     username = Data['username']
     starttime = Data['starttime']
@@ -17,7 +17,7 @@ def GetWeekly(Data: dict) -> dict:
             return NOT_FOUND()
 
         for item in Query:
-            item["weekly_time"] = str(item['weekly_time'])
+            item["month_time"] = str(item['month_time'])
 
         return {
             "code": HTTP_STATUS_CODES['OK'],
@@ -31,23 +31,23 @@ def GetWeekly(Data: dict) -> dict:
 
 def LookUpAll(username, starttime, endtime):
     """
-    获取用户周报信息 查表
+    获取用户月报信息
     """
     return QueryDataFetchAll(sql="""SELECT
-            weekly_id,
+            month_id,
             username,
             title, # 标题
             content, # 内容
-            weekly_time,
+            month_time,
             sub,
             enable # 是否开启
-            FROM weeklydata
+            FROM monthdata
             WHERE 
                 is_deleted = false
             AND
                 (username = '' OR username = %s OR %s = '')
              AND 
-                (weekly_time = '' OR weekly_time >= %s OR %s = '')
+                (month_time = '' OR month_time >= %s OR %s = '')
              AND
-                (weekly_time = '' OR weekly_time <= %s OR %s = '');""",
+                (month_time = '' OR month_time <= %s OR %s = '');""",
                              params=tuple((username, username, starttime, starttime, endtime, endtime)))
