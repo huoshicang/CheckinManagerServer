@@ -30,7 +30,11 @@ from Api.Month.AddMonthData import AddMonth
 from Api.Month.ModifyMonthData import ModifyMonth
 
 # 任务
-from Api.Quest.GetCheckQuest import GetCheckQuest
+# from Api.Quest.GetCheckQuest import GetCheckQuest
 # from Api.Quest.DelWeeklyData import DelWeekly
 # from Api.Quest.AddWeeklyData import AddWeekly
 # from Api.Quest.ModifyWeeklyData import ModifyWeekly
+
+# 信息
+from Api.UserInfo import GetUser
+from Api.AdminInfo import GetAdmin

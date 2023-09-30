@@ -11,7 +11,8 @@ from Router.User import UserRouter
 from Router.Check import UserCheck
 from Router.UserLog import UserLogRouter
 from Router.Weekly import WeeklyRouter
-from Router.Quest import Quest
+# from Router.Quest import Quest
+from Router.Info import InfoRouter
 from component import HTTP_STATUS_CODES, BAD_REQUEST
 
 app = Flask(__name__)
@@ -20,7 +21,8 @@ app.register_blueprint(UserCheck)
 app.register_blueprint(UserLogRouter)
 app.register_blueprint(WeeklyRouter)
 app.register_blueprint(MonthRouter)
-app.register_blueprint(Quest)
+# app.register_blueprint(Quest)
+app.register_blueprint(InfoRouter)
 app.template_folder = 'templates'
 
 CORS(app, resources={"*": {"origins": "*"}})
@@ -76,12 +78,12 @@ def before_request():
     # logging.info(request.environ.get('REQUEST_METHOD'), request.environ.get('PATH_INFO'), request.environ.get('SERVER_PROTOCOL'))
     # logging.info(request.environ.get('REMOTE_ADDR'))
 
-    if ('/user/Login' is request.path or
-            '/user/Logup' is request.path or
-            'user/change' is request.path or
-            '/test' is request.path or
-            '/user/AddInfo' is request.path or
-            '/user/UpLog' is request.path):
+    if ('/user/Login' == request.path or
+            '/user/Logup' == request.path or
+            'user/change' == request.path or
+            '/test' == request.path or
+            '/user/AddInfo' == request.path or
+            '/user/UpLog' == request.path):
         pass
 
     else:
