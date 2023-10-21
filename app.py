@@ -42,9 +42,9 @@ def Log():
     Lis = []
     # if request.get_data() == b'':
     #     return BAD_REQUEST()
-    #
+    
     # data = None
-    #
+    
     # if 'application/json' in request.content_type:
     #     data = request.json
     # elif 'multipart/form-data' in request.content_type:
@@ -120,14 +120,14 @@ def set_response_charset(response):
 
 
 if __name__ == '__main__':
-    # logging.basicConfig(
-    #     level=logging.DEBUG,
-    #     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    #     filename=f"{datetime.date.today()}.log",
-    #     filemode='a',
-    #     encoding='utf-8',
-    # )
-    # log = logging.getLogger(__name__)
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        filename=f"{datetime.date.today()}.log",
+        filemode='a',
+        encoding='utf-8',
+    )
+    log = logging.getLogger(__name__)
 
     msg = r"""
                           _ooOoo_
@@ -163,41 +163,6 @@ if __name__ == '__main__':
            不见满街漂亮妹          哪个归得程序员？
     """
 
-    # print(msg)
+    print(msg)
     # print("运行在7860")
     app.run(host='0.0.0.0', port=7860, debug=True)
-
-"""
-@app.route('/example', methods=['GET', 'POST'])
-def example():
-    if request.method == 'GET':
-        return 'This is a GET request'
-    elif request.method == 'POST':
-        return 'This is a POST request'
-
-
-@app.route('/search')
-def search():
-    query = request.args.get('q')
-    return f'Search query: {query}'
-
-
-@app.route('/submit', methods=['POST'])
-def submit():
-    username = request.form.get('username')
-    password = request.form.get('password')
-    return f'Username: {username}, Password: {password}'
-
-
-@app.route('/user_agent')
-def user_agent():
-    user_agent = request.headers.get('User-Agent')
-    return f'User-Agent: {user_agent}'
-
-
-@app.route('/json_data', methods=['POST'])
-def json_data():
-    data = request.get_json()
-    return f'Received JSON data: {data}'
-
-"""

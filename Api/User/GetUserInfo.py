@@ -5,10 +5,12 @@ from component.Time import Da
 
 
 def GetUserInfo(Data: dict) -> dict:
-    name = Data['name']
-    username = Data['username']
-    phone = Data['phone']
-    gxy_info = Data['gxy_info']
+    name = Data.get('name')
+    username = Data.get('username')
+    phone = Data.get('phone')
+    gxy_info = Data.get('gxy_info')
+    page_size = int(Data.get('page_size'))
+    page_number = int(Data.get('page_number'))
 
     role = Administrator(UserName=tuple((name,)))['role']
 
@@ -19,24 +21,10 @@ def GetUserInfo(Data: dict) -> dict:
         Query = None
 
         if role == "admin":
-            Query = QueryDataFetchAll(sql="""SELECT id,
-            username,
-            phone,
-            gxy_info,
-            role,
-            update_time
-            FROM sys_user
-            WHERE
-            is_deleted = false
-            AND 
-            (username = '' OR username = %s OR %s = '')
-            AND 
-            (phone = '' OR phone = %s OR %s = '')
-            AND
-            (gxy_info = '' OR gxy_info = %s OR %s = '');""",
-                                      params=tuple((username, username,
-                                                    phone, phone,
-                                                    gxy_info, gxy_info,)))
+            Query = LookUpAll(params=tuple((username, username,
+                                            phone, phone,
+                                            gxy_info, gxy_info,
+                                            page_size, ((page_number - 1) * page_size))))
 
 
         elif role == "user":
@@ -59,6 +47,27 @@ def GetUserInfo(Data: dict) -> dict:
 
     except:
         return INTERNAL_SERVER_ERROR()
+
+
+def LookUpAll(params):
+    return QueryDataFetchAll(sql="""SELECT id,
+                    username,
+                    phone,
+                    gxy_info,
+                    role,
+                    update_time
+                FROM sys_user
+                WHERE
+                    is_deleted = false
+                AND 
+                    (username = '' OR username = %s OR %s = '')
+                AND 
+                    (phone = '' OR phone = %s OR %s = '')
+                AND
+                    (gxy_info = '' OR gxy_info = %s OR %s = '')
+                LIMIT %s
+                OFFSET %s;""",
+                             params=params)
 
 
 def LookUpOne(params):

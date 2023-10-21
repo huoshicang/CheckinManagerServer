@@ -1,0 +1,146 @@
+2023-10-21 16:58:46,174 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7860
+ * Running on http://192.168.1.2:7860
+2023-10-21 16:58:46,175 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-10-21 16:58:46,192 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 16:58:46,965 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 16:58:46,970 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 16:58:55,615 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 16:58:55] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 16:59:29,142 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 16:59:29,144 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 16:59:29,145 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 16:59:31,099 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 16:59:32,232 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 16:59:32,235 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 16:59:40,176 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 16:59:40] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 17:00:09,132 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Anaconda3\\Lib\\site-packages\\werkzeug\\__init__.py', reloading
+2023-10-21 17:00:09,141 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Anaconda3\\Lib\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2023-10-21 17:00:09,279 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Anaconda3\\Lib\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2023-10-21 17:00:09,303 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Anaconda3\\Lib\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2023-10-21 17:00:10,401 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:00:11,188 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:00:11,191 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:00:17,624 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Anaconda3\\Lib\\site-packages\\werkzeug\\utils.py', reloading
+2023-10-21 17:00:17,662 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Anaconda3\\Lib\\site-packages\\werkzeug\\_internal.py', reloading
+2023-10-21 17:00:18,773 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:00:19,543 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:00:19,545 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:01:27,605 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:01:27,605 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:01:27,606 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:01:27,606 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:01:28,866 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:01:30,059 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:01:30,061 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:01:30,803 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:01:30] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 17:01:55,798 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:01:55,799 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:01:55,799 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:01:55,799 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:01:57,086 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:01:57,966 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:01:57,968 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:01:59,230 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:01:59] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 17:07:38,258 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:07:38,258 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:07:38,259 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:07:40,062 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:07:41,112 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:07:41,115 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:07:47,607 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:07:47,607 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:07:47,608 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:07:47,608 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:07:48,726 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:07:49,527 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:07:49,529 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:10:33,944 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:10:33,945 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:10:33,945 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:10:33,945 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:10:35,056 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:10:35,894 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:10:35,897 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:10:36,645 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:10:36] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 17:11:09,154 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:11:09,154 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:11:09,154 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:11:10,937 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:11:11,740 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:11:11,743 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:11:18,215 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:11:18] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 17:12:15,497 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:12:15,498 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:12:15,498 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:12:15,498 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:12:16,715 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:12:17,528 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:12:17,531 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:12:18,989 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:12:18] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 17:13:02,012 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:13:02,013 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:13:02,013 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:13:02,013 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:13:03,785 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:13:04,599 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:13:04,602 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:14:24,873 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:14:24,873 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:14:24,873 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:14:24,874 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:14:25,980 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:14:26,784 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:14:26,787 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:17:09,366 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:17:09,367 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:17:09,367 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:17:09,368 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:17:11,147 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:17:11,983 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:17:11,986 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:17:13,386 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Anaconda3\\Lib\\site-packages\\flask\\app.py', reloading
+2023-10-21 17:17:13,391 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:17:13] "[35m[1mPOST /user/info HTTP/1.1[0m" 500 -
+2023-10-21 17:17:14,490 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:17:15,277 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:17:15,280 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:17:47,123 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:17:47,124 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:17:47,124 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:17:47,125 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:17:48,418 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:17:49,257 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:17:49,259 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:17:49,371 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:17:49] "[35m[1mPOST /user/info HTTP/1.1[0m" 500 -
+2023-10-21 17:19:10,152 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:19:10,152 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:19:10,153 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:19:11,262 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:19:12,095 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:19:12,097 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:19:12,803 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:19:12] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 17:19:15,253 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:19:15] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 17:20:49,537 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:20:49,537 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:20:49,537 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:20:51,297 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:20:52,023 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:20:52,026 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:21:08,525 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:21:08,525 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:21:08,526 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:21:08,526 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:21:09,631 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:21:10,465 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:21:10,468 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:21:17,921 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:21:17] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 17:22:09,006 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:22:09] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 17:22:45,759 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:22:45,759 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:22:45,760 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:22:45,760 - werkzeug - INFO -  * Detected change in 'D:\\Code\\Python\\BackEnd\\Api\\User\\GetUserInfo.py', reloading
+2023-10-21 17:22:46,894 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2023-10-21 17:22:47,725 - werkzeug - WARNING -  * Debugger is active!
+2023-10-21 17:22:47,729 - werkzeug - INFO -  * Debugger PIN: 981-589-783
+2023-10-21 17:22:48,431 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:22:48] "POST /user/info HTTP/1.1" 200 -
+2023-10-21 17:30:16,737 - werkzeug - INFO - 127.0.0.1 - - [21/Oct/2023 17:30:16] "POST /user/CheckInfo HTTP/1.1" 200 -
